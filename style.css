@@ -1,0 +1,467 @@
+/* ==========================================================================
+   1. VARIABLES & DESIGN SYSTEM (Light Blue Theme)
+   ========================================================================== */
+:root {
+    --bg-primary: #f4f8fa;
+    --bg-surface: #ffffff;
+    --bg-accent-light: #e3f2fd;
+    --text-main: #2c3e50;
+    --text-muted: #5a738e;
+    --primary: #2196f3;
+    --primary-dark: #1976d2;
+    --secondary: #90caf9;
+    --whatsapp-green: #25d366;
+    --whatsapp-dark: #128c7e;
+    --border-color: #dcdcdc;
+    --font-stack: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    --transition-speed: 0.3s;
+}
+
+/* ==========================================================================
+   2. BASE STYLES & RESET
+   ========================================================================== */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-stack);
+    background-color: var(--bg-primary);
+    color: var(--text-main);
+    line-height: 1.6;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+a {
+    text-color: inherit;
+    text-decoration: none;
+}
+
+/* Common Layout Container */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 0;
+}
+
+/* ==========================================================================
+   3. NAVIGATION BAR (Logo Left, Links Right)
+   ========================================================================== */
+.main-header {
+    background-color: var(--bg-surface);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 5%;
+}
+
+.logo img {
+    height: 60px; /* Adjust based on actual logo asset scale */
+    width: auto;
+    border-radius: 50%;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 1.5rem;
+}
+
+.nav-links a {
+    color: var(--text-main);
+    font-weight: 500;
+    transition: color var(--transition-speed);
+}
+
+.nav-links a:hover {
+    color: var(--primary);
+}
+
+/* ==========================================================================
+   4. HOME PAGE SECTIONS
+   ========================================================================== */
+/* Hero Banner */
+.hero-section {
+    background: linear-gradient(135deg, var(--bg-accent-light) 0%, #ffffff 100%);
+    padding: 4rem 5%;
+    text-align: center;
+}
+
+.hero-content h1 {
+    font-size: 2.5rem;
+    color: var(--primary-dark);
+    margin-bottom: 1rem;
+}
+
+.hero-content p {
+    font-size: 1.1rem;
+    color: var(--text-muted);
+    margin-bottom: 2rem;
+    max-width: 600px;
+    margin-inline: auto;
+}
+
+/* Buttons */
+/* ==========================================================================
+   Hero CTA Cards Addition
+   ========================================================================== */
+.cta-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2.5rem;
+}
+
+.cta-card {
+    background: var(--bg-surface, #ffffff);
+    border: 1px solid var(--border-color, #dcdcdc);
+    border-radius: 8px;
+    padding: 1rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.02);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    width: 100%;
+    max-width: 280px;
+    transition: transform var(--transition-speed, 0.3s);
+}
+
+.cta-card:hover {
+    transform: translateY(-4px);
+}
+
+.cta-image {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 6px;
+}
+
+/* Override previous inline block width constraints if present */
+.cta-card .btn {
+    width: 100%;
+    max-width: none;
+    margin: 0;
+}
+
+/* Tablet & Desktop Layout Adjustment */
+@media (min-width: 600px) {
+    .cta-buttons {
+        flex-direction: row;
+        gap: 2rem;
+    }
+}
+
+.btn {
+    display: inline-block;
+    padding: 0.8rem 1.8rem;
+    border-radius: 4px;
+    font-weight: 600;
+    cursor: pointer;
+    border: none;
+    transition: background-color var(--transition-speed), transform 0.1s;
+    text-align: center;
+    width: 100%;
+    max-width: 250px;
+}
+
+.btn-primary {
+    background-color: var(--primary);
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-dark);
+}
+
+.btn-secondary {
+    background-color: var(--bg-surface);
+    color: var(--primary);
+    border: 2px solid var(--primary);
+}
+
+.btn-secondary:hover {
+    background-color: var(--bg-accent-light);
+}
+
+/* About Sections */
+.about-section {
+    padding: 3rem 5%;
+    text-align: center;
+}
+
+.developer-bg {
+    background-color: var(--bg-surface);
+}
+
+.about-section h2 {
+    color: var(--text-main);
+    margin-bottom: 1rem;
+}
+
+/* ==========================================================================
+   5. CATALOG & SHOPPING LAYOUT (Mobile-First)
+   ========================================================================== */
+/* ==========================================================================
+   Cart Management Controls Extension (Isolated Additions)
+   ========================================================================== */
+
+/* Positions the header title and Clear All button side-by-side */
+.cart-header-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--border-color, #dcdcdc);
+    padding-bottom: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+/* Overrides sidebar default h2 padding constraints since we have a row box now */
+.cart-header-row h2 {
+    font-size: 1.3rem;
+    margin-bottom: 0 !important;
+    border-bottom: none !important;
+    padding-bottom: 0 !important;
+}
+
+/* Style for the Clear All button */
+.btn-clear-all {
+    background: transparent;
+    color: #e74c3c; /* Professional warning red */
+    border: 1px solid #e74c3c;
+    padding: 0.25rem 0.6rem;
+    font-size: 0.8rem;
+    font-weight: 600;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.btn-clear-all:hover {
+    background-color: #e74c3c;
+    color: #ffffff;
+}
+
+/* Style for the individual item remove button */
+.btn-remove-item {
+    background: transparent;
+    border: none;
+    color: var(--text-muted, #7f8c8d);
+    font-size: 1.2rem;
+    line-height: 1;
+    cursor: pointer;
+    padding: 0 0.4rem;
+    font-weight: bold;
+    transition: color 0.2s, transform 0.1s;
+}
+
+.btn-remove-item:hover {
+    color: #c0392b;
+    transform: scale(1.15);
+}
+   .catalog-layout {
+    display: flex;
+    flex-direction: column; /* Stack Cart and Products vertically on small screens */
+    padding: 1.5rem 5%;
+    gap: 2rem;
+}
+
+.products-catalog h1 {
+    margin-bottom: 2rem;
+    border-bottom: 2px solid var(--bg-accent-light);
+    padding-bottom: 0.5rem;
+}
+
+.catalog-section {
+    margin-bottom: 3rem;
+}
+
+.catalog-section h2 {
+    margin-bottom: 1.5rem;
+    color: var(--text-muted);
+}
+
+/* Product Responsive Grid */
+.product-grid {
+    display: grid;
+    grid-template-columns: 1fr; /* 1 Column on mobile mobile */
+    gap: 1.5rem;
+}
+
+.product-card {
+    background-color: var(--bg-surface);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 1.5rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.product-card img {
+    height: 180px;
+    object-fit: contain;
+    margin-bottom: 1rem;
+}
+
+.product-card h3 {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+}
+
+.product-card .price {
+    font-weight: bold;
+    color: var(--primary-dark);
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+}
+
+.btn-add-cart {
+    background-color: var(--text-main);
+    color: white;
+    width: 100%;
+}
+
+.btn-add-cart:hover {
+    background-color: #1a252f;
+}
+
+/* ==========================================================================
+   6. LIVE SHOPPING CART WIDGET COMPONENT
+   ========================================================================== */
+.cart-sidebar {
+    background-color: var(--bg-surface);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 1.5rem;
+    height: fit-content;
+}
+
+.cart-sidebar h2 {
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 0.5rem;
+}
+
+#cart-items-container {
+    max-height: 250px;
+    overflow-y: auto;
+    margin-bottom: 1rem;
+}
+
+.empty-cart-msg {
+    color: var(--text-muted);
+    font-style: italic;
+}
+
+/* Added dynamically via JS later */
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 0;
+    border-bottom: 1px dashed var(--border-color);
+    font-size: 0.95rem;
+}
+
+.cart-summary {
+    padding-top: 1rem;
+    border-top: 1px solid var(--border-color);
+}
+
+.cart-summary p {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+}
+
+.btn-whatsapp {
+    background-color: var(--whatsapp-green);
+    color: white;
+    width: 100%;
+    max-width: none;
+}
+
+.btn-whatsapp:hover {
+    background-color: var(--whatsapp-dark);
+}
+
+/* ==========================================================================
+   7. FOOTER
+   ========================================================================== */
+footer {
+    background-color: var(--text-main);
+    color: var(--bg-accent-light);
+    text-align: center;
+    padding: 1.5rem 0;
+    margin-top: 4rem;
+    font-size: 0.9rem;
+}
+
+/* ==========================================================================
+   8. MEDIA QUERIES (Responsive Scaling)
+   ========================================================================== */
+
+/* Tablet Optimization (min-width: 600px) */
+@media (min-width: 600px) {
+    .hero-content h1 {
+        font-size: 3rem;
+    }
+    
+    .cta-buttons {
+        flex-direction: row;
+        justify-content: center;
+    }
+    
+    .product-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 items per row */
+    }
+}
+
+/* Desktop Optimization (min-width: 992px) */
+@media (min-width: 992px) {
+    .catalog-layout {
+        flex-direction: row-reverse; /* Places Cart on the right, Products on left */
+        align-items: flex-start;
+    }
+
+    .cart-sidebar {
+        width: 300px;
+        position: sticky;
+        top: 90px; /* Keeps the cart locked in place during scrolling */
+    }
+
+    .products-catalog {
+        flex: 1;
+    }
+
+    .product-grid {
+        grid-template-columns: repeat(3, 1fr); /* 3 items per row */
+    }
+}

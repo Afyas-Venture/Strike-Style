@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="Final_logo.jpg">
+    <title>Strike & Style | Premium Sports Gear</title>
+    <meta name="description" content="Shop elite cricket bats, professional leather balls, and high-performance athletic apparel.">
+    
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://yourdomain.com/sports.html">
+    <meta property="og:title" content="BlueStream | Elite Cricket & Sports Equipment">
+    <meta property="og:description" content="Gear up with premium bats, balls, and athletic kit. Direct checkout via WhatsApp.">
+    <meta property="og:image" content="https://yourdomain.com/images/og-sports-banner.jpg">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="main-header">
+        <nav class="nav-container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="Final_logo.jpg" alt="BlueStream Logo">
+                </a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="clothes.html">Clothes</a></li>
+                <li><a href="#bats">Bats</a></li>
+                <li><a href="#balls">Balls</a></li>
+                <li><a href="#sports-apparel">Apparel</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="catalog-layout">
+        <aside class="cart-sidebar" id="cart-component">
+    <div class="cart-header-row">
+        <h2>Your Shopping Cart</h2>
+        <!-- Clear Cart Button Added -->
+        <button id="clear-cart-btn" class="btn-clear-all" title="Clear entire cart">Clear All</button>
+    </div>
+    
+    <div id="cart-items-container">
+        <p class="empty-cart-msg">Your cart is empty.</p>
+    </div>
+    
+    <div class="cart-summary">
+        <p>Total: <strong>$<span id="cart-total-price">0.00</span></strong></p>
+        <button id="whatsapp-checkout-btn" class="btn btn-whatsapp">Buy via WhatsApp</button>
+    </div>
+</aside>
+
+        <section class="products-catalog">
+            <h1>Cricket Equipment Catalog</h1>
+
+            <section id="bats" class="catalog-section">
+                <h2>Professional Bats</h2>
+                <div class="product-grid">
+                    <article class="product-card">
+                        <img src="images.jpg" alt="English Willow Cricket Bat">
+                        <h3>Grade 1 English Willow Bat</h3>
+                        <p class="price">$250.00</p>
+                        <button class="btn btn-add-cart" data-name="Grade 1 English Willow Bat" data-price="250.00">Add to Cart</button>
+                    </article>
+                    </div>
+            </section>
+
+            <section id="balls" class="catalog-section">
+                <h2>Match Balls</h2>
+                <div class="product-grid">
+                    <article class="product-card">
+                        <img src="ball.jpg" alt="A-Grade Alum Tanned Leather Ball">
+                        <h3>Premium Leather Match Ball</h3>
+                        <p class="price">$30.00</p>
+                        <button class="btn btn-add-cart" data-name="Premium Leather Match Ball" data-price="30.00">Add to Cart</button>
+                    </article>
+                </div>
+            </section>
+
+            <section id="sports-apparel" class="catalog-section">
+                <h2>Athletic Apparel & Shirts</h2>
+                <div class="product-grid">
+                    <article class="product-card">
+                        <img src="jersey.jpg" alt="Dry-Fit Cricket Team Jersey">
+                        <h3>Dry-Fit Pro Cricket Jersey</h3>
+                        <p class="price">$45.00</p>
+                        <button class="btn btn-add-cart" data-name="Dry-Fit Pro Cricket Jersey" data-price="45.00">Add to Cart</button>
+                    </article>
+                </div>
+            </section>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 BlueStream E-Commerce. All rights reserved.</p>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>

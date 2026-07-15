@@ -2,7 +2,7 @@
    1. VARIABLES & DESIGN SYSTEM (Light Blue Theme)
    ========================================================================== */
 :root {
-    --bg-primary: #f4f8fa;
+    --bg-primary: #e7eff3;
     --bg-surface: #ffffff;
     --bg-accent-light: #e3f2fd;
     --text-main: #2c3e50;
@@ -313,18 +313,27 @@ a {
 .product-card {
     background-color: var(--bg-surface);
     border: 1px solid var(--border-color);
-    border-radius: 8px;
+    border-radius: 10px;
     padding: 1.5rem;
     text-align: center;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
+    transition: transform 0.3s ease; 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+
+}
+.product-card:hover {
+  transform: translateY(-8px); 
+  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.15); 
 }
 
 .product-card img {
-    height: 180px;
-    object-fit: contain;
+    height: 200px;
+    width: 60%;
+    border-radius: 10px;
+    /* object-fit: contain; */
     margin-bottom: 1rem;
 }
 

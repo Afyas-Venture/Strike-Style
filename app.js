@@ -69,7 +69,7 @@
             itemElement.innerHTML = `
                 <span class="item-name">${escapeHTML(item.name)}</span>
                 <div style="display: flex; align-items: center; gap: 0.5rem;">
-                    <span class="item-price">$${priceNum.toFixed(2)}</span>
+                    <span class="item-price">Rs${priceNum.toFixed(2)}</span>
                     <button class="btn-remove-item" data-index="${index}" title="Remove item">&times;</button>
                 </div>
             `;

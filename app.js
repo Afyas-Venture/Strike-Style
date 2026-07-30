@@ -121,7 +121,7 @@
         window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
     };
 
-    // Handler 3: Single Item Instant Purchase (Integrated from your logic)
+    // Handler 3: Single Item Instant Purchase 
     const handleInstantPurchase = (event) => {
         const button = event.target.closest('.btn-instant-buy');
         if (!button) return;
